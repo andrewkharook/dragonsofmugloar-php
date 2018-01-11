@@ -8,6 +8,8 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 abstract class AbstractPlayer
 {
     /**
+     * Associative array of character's skills
+     *
      * @var array {
      *      @var int $attack
      *      @var int $armor
@@ -52,7 +54,7 @@ abstract class AbstractPlayer
     }
 
     /**
-     * Getter method for AbstractPlayer::skills
+     * Getter method for player's skills
      *
      * @return array
      */

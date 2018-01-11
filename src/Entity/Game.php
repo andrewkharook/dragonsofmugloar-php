@@ -72,6 +72,8 @@ class Game
     }
 
     /**
+     * Builds a set of dragon's skills based on weather and knight's skills
+     *
      * @param Weather $weather
      * @param Knight  $knight
      * @return array|string
@@ -119,6 +121,8 @@ class Game
     }
 
     /**
+     * Submits a solution to the API
+     *
      * @param Dragon $dragon
      * @return string
      */
@@ -146,6 +150,8 @@ class Game
     }
 
     /**
+     * Parses the API response
+     *
      * @param ResponseInterface $response
      * @return null|\stdClass
      * @throws \RuntimeException
@@ -162,6 +168,8 @@ class Game
     }
 
     /**
+     * Retrieves the Game Id from current state
+     *
      * @return int
      */
     public function getGameId(): int
@@ -175,6 +183,11 @@ class Game
                     ->gameId;
     }
 
+    /**
+     * Rettrieves the list of Knight's skills from current state
+     *
+     * @return array
+     */
     public function getKnightsSkills(): array
     {
         if (null !== $this->gameState) {
@@ -187,6 +200,8 @@ class Game
     }
 
     /**
+     * Getter method for game's logger
+     *
      * @return LoggerInterface
      */
     public function getLogger(): LoggerInterface
@@ -195,6 +210,8 @@ class Game
     }
 
     /**
+     * Setter method for game's logger
+     *
      * @param LoggerInterface $logger
      */
     public function setLogger(LoggerInterface $logger): void

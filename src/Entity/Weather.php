@@ -38,6 +38,12 @@ class Weather
         $this->httpClient = $httpClient;
     }
 
+    /**
+     * Retrieves weather forecast from the API
+     *
+     * @param int $gameId
+     * @return Weather
+     */
     public function getForecast(int $gameId): Weather
     {
         $url = str_replace('%gameId%', $gameId, self::WEATHER_API_URL);
@@ -52,6 +58,8 @@ class Weather
     }
 
     /**
+     * Parses out the forecast code
+     *
      * @return string
      * @throws \RuntimeException
      */
@@ -65,6 +73,8 @@ class Weather
     }
 
     /**
+     * Parses out the forecast message
+     *
      * @return string
      * @throws \RuntimeException
      */
@@ -78,6 +88,8 @@ class Weather
     }
 
     /**
+     * Parses the API response
+     *
      * @param ResponseInterface $response
      * @return \SimpleXMLElement
      * @throws \RuntimeException

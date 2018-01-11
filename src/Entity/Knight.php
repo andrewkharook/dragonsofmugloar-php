@@ -7,7 +7,9 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class Knight extends AbstractPlayer
 {
-
+    /**
+     * {@inheritdoc}
+     */
     protected function configureSkills(OptionsResolver $resolver): void
     {
         parent::configureSkills($resolver);
@@ -15,10 +17,14 @@ class Knight extends AbstractPlayer
         $resolver->setDefined('name');
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getSkills(): array
     {
         $skills = $this->skills;
         unset($skills['name']);
+
         return $skills;
     }
 
