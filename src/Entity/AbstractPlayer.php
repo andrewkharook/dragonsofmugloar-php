@@ -8,6 +8,11 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 abstract class AbstractPlayer
 {
     /**
+     * Sum of all the skills
+     */
+    const SKILLS_TOTAL = 20;
+
+    /**
      * Associative array of character's skills
      *
      * @var array {
