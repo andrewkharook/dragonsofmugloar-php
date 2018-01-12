@@ -47,7 +47,7 @@ for ($i = 1; $i <= $gamesNumber; $i++) {
     $game->getLogger()->info('New game started.', [
         'game_id' => $game->getGameId(),
         'weather' => $weather->getForecastCode(),
-        'knight'  => $knight->__toString(),
+        'knight'  => $knight,
         'dragon'  => $dragon,
         'result'  => $result,
     ]);
