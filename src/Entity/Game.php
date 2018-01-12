@@ -105,14 +105,20 @@ class Game
                 ];
                 break;
             default:
-                $winningStrategy = [2, -1, -1, 0];
-                $opponentsSkills = $knight->getSkills();
-                arsort($opponentsSkills);
-                $keys = array_keys($opponentsSkills);
-                $values = array_map(function ($a, $b) {
-                    return $a + $b;
-                }, $opponentsSkills, $winningStrategy);
-                $skills = array_combine($keys, $values);
+                $winningStrategy = [0, -1, -1, 2];
+                $skills = $knight->getSkills();
+                asort($skills, SORT_NUMERIC);
+                foreach ($skills as $name => $value) {
+                    $adjustment = array_shift($winningStrategy);
+
+                    if (0 === $value) {
+                        $winningStrategy[0] += $adjustment;
+
+                        continue;
+                    }
+
+                    $skills[$name] += $adjustment;
+                }
         }
 
         $this->gameState->dragon = (object) $skills;
