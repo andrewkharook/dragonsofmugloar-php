@@ -1,0 +1,8 @@
+{
+  "dragon": {
+    "attack": 10,
+    "armor": 6,
+    "agility": 4,
+    "endurance": 0
+  }
+}
