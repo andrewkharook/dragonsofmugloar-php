@@ -44,7 +44,7 @@ class Weather
      * @param int $gameId
      * @return Weather
      */
-    public function getForecast(int $gameId): Weather
+    public function retrieveForecast(int $gameId): Weather
     {
         $url = str_replace('%gameId%', $gameId, self::WEATHER_API_URL);
         $response = $this->httpClient->request(

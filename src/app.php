@@ -33,7 +33,7 @@ for ($i = 1; $i <= $gamesNumber; $i++) {
     }
 
     $game->init();
-    $weather = (new Weather($httpClient))->getForecast($game->getGameId());
+    $weather = (new Weather($httpClient))->retrieveForecast($game->getGameId());
     $knight = new Knight($game->getKnightsSkills());
     $dragon = new Dragon($game->getDragonsSkills($weather, $knight));
     $result = $game->startBattle($dragon);
