@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace DragonsOfMugloar;
 
 
@@ -15,7 +17,7 @@ use Monolog\Handler\StreamHandler;
 
 $httpClient = new Client();
 
-$logDir = __DIR__.'/../var/log';
+$logDir = dirname(__DIR__).'/var/log';
 $logger = new Logger('game');
 $logger->pushHandler(new StreamHandler($logDir.'/game.log.txt'));
 
