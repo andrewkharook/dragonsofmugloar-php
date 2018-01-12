@@ -87,7 +87,9 @@ class Game
         $forecastCode = $weather->getForecastCode();
         switch ($forecastCode) {
             case Weather::FORECAST_STORM:
-                // Everybody dies
+                // Defeat. Everybody dies
+            case Weather::FORECAST_FOG:
+                // Victory. Knight is useless in the fog
             case Weather::FORECAST_DRY:
                 $skills = [
                     'attack'    => 5,

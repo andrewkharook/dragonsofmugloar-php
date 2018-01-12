@@ -16,6 +16,8 @@ class Weather
 
     const FORECAST_DRY = 'T E';
 
+    const FORECAST_FOG = 'FUNDEFINEDG';
+
     const WEATHER_API_URL = 'http://www.dragonsofmugloar.com/weather/api/report/%gameId%';
 
     /**
